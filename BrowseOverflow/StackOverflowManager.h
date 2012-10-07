@@ -18,5 +18,6 @@
 @property StackOverflowCommunicator *communicator;
 
 - (void)fetchQuestionsOnTopic:(Topic *)topic;
+- (void)searchingForQuestionsFailedWithError:(NSError *)error;
 
 @end

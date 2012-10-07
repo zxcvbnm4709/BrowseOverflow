@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class Topic;
+
 @protocol StackOverflowManagerDelegate <NSObject>
+
+- (void)fetchingQuestionsFailedWithError:(NSError *)error;
 
 @end

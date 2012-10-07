@@ -6,6 +6,12 @@
 //  Copyright (c) 2012 Chang Chia-huai. All rights reserved.
 //
 
+extern NSString *StackOverflowManagerError;
+
+enum {
+    StackOverflowManagerErrorQuestionSearchCode
+};
+
 #import "StackOverflowManager.h"
 #import "StackOverflowCommunicator.h"
 #import "Topic.h"
@@ -26,4 +32,12 @@
     [communicator searchForQuestionsWithTag:[topic tag]];
 }
 
+- (void)searchingForQuestionsFailedWithError:(NSError *)error {
+    NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
+    NSError *reportableError = [NSError errorWithDomain:StackOverflowManagerError code:StackOverflowManagerErrorQuestionSearchCode userInfo:errorInfo];
+    [delegate fetchingQuestionsFailedWithError:reportableError];
+}
+
 @end
+
+NSString *StackOverflowManagerError = @"StackOverflowManagerError";
