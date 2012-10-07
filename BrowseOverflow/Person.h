@@ -10,8 +10,8 @@
 
 @interface Person : NSObject
 
-@property (readonly, strong) NSString *name;
-@property (readonly, strong) NSURL *avatarURL;
+@property (readonly) NSString *name;
+@property (readonly) NSURL *avatarURL;
 
 - (id)initWithName:(NSString *)aName avatarLocation:(NSString *)location;
 

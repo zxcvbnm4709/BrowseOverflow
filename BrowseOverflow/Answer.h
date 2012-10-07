@@ -12,9 +12,11 @@
 
 @interface Answer : NSObject
 
-@property (strong) NSString *text;
-@property (strong) Person *person;
+@property NSString *text;
+@property Person *person;
 @property (getter=isAccepted) BOOL accepted;
 @property NSInteger score;
+
+- (NSComparisonResult)compare:(Answer *)otherAnswer;
 
 @end
