@@ -24,7 +24,15 @@
 		3A17D386161EB63800566539 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A17D35A161EB63600566539 /* UIKit.framework */; };
 		3A17D387161EB63800566539 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A17D35C161EB63600566539 /* Foundation.framework */; };
 		3A17D38F161EB63800566539 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A17D38D161EB63800566539 /* InfoPlist.strings */; };
-		3A17D392161EB63800566539 /* BrowseOverflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A17D391161EB63800566539 /* BrowseOverflowTests.m */; };
+		3A4F1E68161F067400AAFA1A /* TopicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E67161F067400AAFA1A /* TopicTests.m */; };
+		3A4F1E6B161F06CE00AAFA1A /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E6A161F06CE00AAFA1A /* Topic.m */; };
+		3A4F1E6C161F06CE00AAFA1A /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E6A161F06CE00AAFA1A /* Topic.m */; };
+		3A4F1E6F1620024E00AAFA1A /* QuestionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E6E1620024E00AAFA1A /* QuestionTests.m */; };
+		3A4F1E72162002D800AAFA1A /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E71162002D800AAFA1A /* Question.m */; };
+		3A4F1E73162002D800AAFA1A /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E71162002D800AAFA1A /* Question.m */; };
+		3A4F1E7A16201EF900AAFA1A /* PersonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E7916201EF900AAFA1A /* PersonTests.m */; };
+		3A4F1E7D162022D200AAFA1A /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E7C162022D200AAFA1A /* Person.m */; };
+		3A4F1E7E162022D200AAFA1A /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E7C162022D200AAFA1A /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +69,18 @@
 		3A17D384161EB63800566539 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		3A17D38C161EB63800566539 /* BrowseOverflowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BrowseOverflowTests-Info.plist"; sourceTree = "<group>"; };
 		3A17D38E161EB63800566539 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3A17D390161EB63800566539 /* BrowseOverflowTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrowseOverflowTests.h; sourceTree = "<group>"; };
-		3A17D391161EB63800566539 /* BrowseOverflowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrowseOverflowTests.m; sourceTree = "<group>"; };
+		3A4F1E66161F067400AAFA1A /* TopicTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicTests.h; sourceTree = "<group>"; };
+		3A4F1E67161F067400AAFA1A /* TopicTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicTests.m; sourceTree = "<group>"; };
+		3A4F1E69161F06CE00AAFA1A /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
+		3A4F1E6A161F06CE00AAFA1A /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
+		3A4F1E6D1620024E00AAFA1A /* QuestionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionTests.h; sourceTree = "<group>"; };
+		3A4F1E6E1620024E00AAFA1A /* QuestionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionTests.m; sourceTree = "<group>"; };
+		3A4F1E70162002D800AAFA1A /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		3A4F1E71162002D800AAFA1A /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		3A4F1E7816201EF900AAFA1A /* PersonTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonTests.h; sourceTree = "<group>"; };
+		3A4F1E7916201EF900AAFA1A /* PersonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonTests.m; sourceTree = "<group>"; };
+		3A4F1E7B162022D200AAFA1A /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		3A4F1E7C162022D200AAFA1A /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +149,12 @@
 				3A17D378161EB63700566539 /* MasterViewController.xib */,
 				3A17D37B161EB63700566539 /* DetailViewController.xib */,
 				3A17D361161EB63700566539 /* Supporting Files */,
+				3A4F1E69161F06CE00AAFA1A /* Topic.h */,
+				3A4F1E6A161F06CE00AAFA1A /* Topic.m */,
+				3A4F1E70162002D800AAFA1A /* Question.h */,
+				3A4F1E71162002D800AAFA1A /* Question.m */,
+				3A4F1E7B162022D200AAFA1A /* Person.h */,
+				3A4F1E7C162022D200AAFA1A /* Person.m */,
 			);
 			path = BrowseOverflow;
 			sourceTree = "<group>";
@@ -152,9 +176,13 @@
 		3A17D38A161EB63800566539 /* BrowseOverflowTests */ = {
 			isa = PBXGroup;
 			children = (
-				3A17D390161EB63800566539 /* BrowseOverflowTests.h */,
-				3A17D391161EB63800566539 /* BrowseOverflowTests.m */,
 				3A17D38B161EB63800566539 /* Supporting Files */,
+				3A4F1E66161F067400AAFA1A /* TopicTests.h */,
+				3A4F1E67161F067400AAFA1A /* TopicTests.m */,
+				3A4F1E6D1620024E00AAFA1A /* QuestionTests.h */,
+				3A4F1E6E1620024E00AAFA1A /* QuestionTests.m */,
+				3A4F1E7816201EF900AAFA1A /* PersonTests.h */,
+				3A4F1E7916201EF900AAFA1A /* PersonTests.m */,
 			);
 			path = BrowseOverflowTests;
 			sourceTree = "<group>";
@@ -283,6 +311,9 @@
 				3A17D36B161EB63700566539 /* AppDelegate.m in Sources */,
 				3A17D374161EB63700566539 /* MasterViewController.m in Sources */,
 				3A17D377161EB63700566539 /* DetailViewController.m in Sources */,
+				3A4F1E6B161F06CE00AAFA1A /* Topic.m in Sources */,
+				3A4F1E72162002D800AAFA1A /* Question.m in Sources */,
+				3A4F1E7D162022D200AAFA1A /* Person.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +321,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A17D392161EB63800566539 /* BrowseOverflowTests.m in Sources */,
+				3A4F1E68161F067400AAFA1A /* TopicTests.m in Sources */,
+				3A4F1E6C161F06CE00AAFA1A /* Topic.m in Sources */,
+				3A4F1E6F1620024E00AAFA1A /* QuestionTests.m in Sources */,
+				3A4F1E73162002D800AAFA1A /* Question.m in Sources */,
+				3A4F1E7A16201EF900AAFA1A /* PersonTests.m in Sources */,
+				3A4F1E7E162022D200AAFA1A /* Person.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +432,7 @@
 				GCC_PREFIX_HEADER = "BrowseOverflow/BrowseOverflow-Prefix.pch";
 				INFOPLIST_FILE = "BrowseOverflow/BrowseOverflow-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -407,6 +444,7 @@
 				GCC_PREFIX_HEADER = "BrowseOverflow/BrowseOverflow-Prefix.pch";
 				INFOPLIST_FILE = "BrowseOverflow/BrowseOverflow-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -423,6 +461,7 @@
 				GCC_PREFIX_HEADER = "BrowseOverflow/BrowseOverflow-Prefix.pch";
 				INFOPLIST_FILE = "BrowseOverflowTests/BrowseOverflowTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = NO;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -440,6 +479,7 @@
 				GCC_PREFIX_HEADER = "BrowseOverflow/BrowseOverflow-Prefix.pch";
 				INFOPLIST_FILE = "BrowseOverflowTests/BrowseOverflowTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = NO;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -464,6 +504,7 @@
 				3A17D397161EB63800566539 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A17D398161EB63800566539 /* Build configuration list for PBXNativeTarget "BrowseOverflowTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +513,7 @@
 				3A17D39A161EB63800566539 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
