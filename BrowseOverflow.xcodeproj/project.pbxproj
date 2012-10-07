@@ -43,6 +43,9 @@
 		3A4F1E941621672000AAFA1A /* StackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E931621672000AAFA1A /* StackOverflowCommunicator.m */; };
 		3A4F1E951621672000AAFA1A /* StackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E931621672000AAFA1A /* StackOverflowCommunicator.m */; };
 		3A4F1E981621674000AAFA1A /* MockStackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E971621674000AAFA1A /* MockStackOverflowCommunicator.m */; };
+		3ABC635116218F9B00FEDD4A /* QuestionBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABC635016218F9A00FEDD4A /* QuestionBuilder.m */; };
+		3ABC635216218F9B00FEDD4A /* QuestionBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABC635016218F9A00FEDD4A /* QuestionBuilder.m */; };
+		3ABC635616218FE800FEDD4A /* FakeQuestionBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABC635516218FE800FEDD4A /* FakeQuestionBuilder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +109,10 @@
 		3A4F1E931621672000AAFA1A /* StackOverflowCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackOverflowCommunicator.m; sourceTree = "<group>"; };
 		3A4F1E961621674000AAFA1A /* MockStackOverflowCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockStackOverflowCommunicator.h; sourceTree = "<group>"; };
 		3A4F1E971621674000AAFA1A /* MockStackOverflowCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockStackOverflowCommunicator.m; sourceTree = "<group>"; };
+		3ABC634F16218F9A00FEDD4A /* QuestionBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionBuilder.h; sourceTree = "<group>"; };
+		3ABC635016218F9A00FEDD4A /* QuestionBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionBuilder.m; sourceTree = "<group>"; };
+		3ABC635416218FE800FEDD4A /* FakeQuestionBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeQuestionBuilder.h; sourceTree = "<group>"; };
+		3ABC635516218FE800FEDD4A /* FakeQuestionBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeQuestionBuilder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +194,8 @@
 				3A4F1E8D16215FFD00AAFA1A /* StackOverflowManagerDelegate.h */,
 				3A4F1E921621672000AAFA1A /* StackOverflowCommunicator.h */,
 				3A4F1E931621672000AAFA1A /* StackOverflowCommunicator.m */,
+				3ABC634F16218F9A00FEDD4A /* QuestionBuilder.h */,
+				3ABC635016218F9A00FEDD4A /* QuestionBuilder.m */,
 			);
 			path = BrowseOverflow;
 			sourceTree = "<group>";
@@ -240,6 +249,8 @@
 				3A4F1E90162160D400AAFA1A /* MockStackOverflowManagerDelegate.m */,
 				3A4F1E961621674000AAFA1A /* MockStackOverflowCommunicator.h */,
 				3A4F1E971621674000AAFA1A /* MockStackOverflowCommunicator.m */,
+				3ABC635416218FE800FEDD4A /* FakeQuestionBuilder.h */,
+				3ABC635516218FE800FEDD4A /* FakeQuestionBuilder.m */,
 			);
 			path = "Mocks, Fakes Stubs";
 			sourceTree = "<group>";
@@ -365,6 +376,7 @@
 				3A4F1E841621391500AAFA1A /* Answer.m in Sources */,
 				3A4F1E8B16215B8200AAFA1A /* StackOverflowManager.m in Sources */,
 				3A4F1E941621672000AAFA1A /* StackOverflowCommunicator.m in Sources */,
+				3ABC635116218F9B00FEDD4A /* QuestionBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +397,8 @@
 				3A4F1E91162160D400AAFA1A /* MockStackOverflowManagerDelegate.m in Sources */,
 				3A4F1E951621672000AAFA1A /* StackOverflowCommunicator.m in Sources */,
 				3A4F1E981621674000AAFA1A /* MockStackOverflowCommunicator.m in Sources */,
+				3ABC635216218F9B00FEDD4A /* QuestionBuilder.m in Sources */,
+				3ABC635616218FE800FEDD4A /* FakeQuestionBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

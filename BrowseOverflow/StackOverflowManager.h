@@ -10,14 +10,17 @@
 #import "StackOverflowManagerDelegate.h"
 
 @class StackOverflowCommunicator;
+@class QuestionBuilder;
 @class Topic;
 
 @interface StackOverflowManager : NSObject
 
 @property (weak, nonatomic) id<StackOverflowManagerDelegate> delegate;
 @property StackOverflowCommunicator *communicator;
+@property QuestionBuilder *questionBuilder;
 
 - (void)fetchQuestionsOnTopic:(Topic *)topic;
 - (void)searchingForQuestionsFailedWithError:(NSError *)error;
+- (void)receivedQuestionsJSON:(NSString *)objectNotation;
 
 @end

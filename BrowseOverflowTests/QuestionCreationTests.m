@@ -11,6 +11,7 @@
 #import "MockStackOverflowManagerDelegate.h"
 #import "MockStackOverflowCommunicator.h"
 #import "Topic.h"
+#import "FakeQuestionBuilder.h"
 
 @implementation QuestionCreationTests {
     StackOverflowManager *mgr;
@@ -59,6 +60,14 @@
     NSError *underlyingError = [NSError errorWithDomain:@"Test domain" code:0 userInfo:nil];
     [mgr searchingForQuestionsFailedWithError:underlyingError];
     STAssertEqualObjects([[[delegate fetchError] userInfo] objectForKey:NSUnderlyingErrorKey], underlyingError, @"The underlying error should be available to clinet code");
+}
+
+- (void)testQuestionJSONIsPassedToQuestionBuilder {
+    FakeQuestionBuilder *builder = [[FakeQuestionBuilder alloc] init];
+    mgr.questionBuilder = builder;
+    [mgr receivedQuestionsJSON:@"Fake JSON"];
+    STAssertEqualObjects(builder.JSON, @"Fake JSON", @"Downloaded JSON is sent to the builder");
+    mgr.questionBuilder = nil;
 }
 
 @end
