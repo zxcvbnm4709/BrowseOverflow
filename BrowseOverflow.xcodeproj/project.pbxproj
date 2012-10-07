@@ -40,6 +40,9 @@
 		3A4F1E8B16215B8200AAFA1A /* StackOverflowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E8A16215B8200AAFA1A /* StackOverflowManager.m */; };
 		3A4F1E8C16215B8200AAFA1A /* StackOverflowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E8A16215B8200AAFA1A /* StackOverflowManager.m */; };
 		3A4F1E91162160D400AAFA1A /* MockStackOverflowManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E90162160D400AAFA1A /* MockStackOverflowManagerDelegate.m */; };
+		3A4F1E941621672000AAFA1A /* StackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E931621672000AAFA1A /* StackOverflowCommunicator.m */; };
+		3A4F1E951621672000AAFA1A /* StackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E931621672000AAFA1A /* StackOverflowCommunicator.m */; };
+		3A4F1E981621674000AAFA1A /* MockStackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E971621674000AAFA1A /* MockStackOverflowCommunicator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +102,10 @@
 		3A4F1E8D16215FFD00AAFA1A /* StackOverflowManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackOverflowManagerDelegate.h; sourceTree = "<group>"; };
 		3A4F1E8F162160D400AAFA1A /* MockStackOverflowManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockStackOverflowManagerDelegate.h; sourceTree = "<group>"; };
 		3A4F1E90162160D400AAFA1A /* MockStackOverflowManagerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockStackOverflowManagerDelegate.m; sourceTree = "<group>"; };
+		3A4F1E921621672000AAFA1A /* StackOverflowCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackOverflowCommunicator.h; sourceTree = "<group>"; };
+		3A4F1E931621672000AAFA1A /* StackOverflowCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackOverflowCommunicator.m; sourceTree = "<group>"; };
+		3A4F1E961621674000AAFA1A /* MockStackOverflowCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockStackOverflowCommunicator.h; sourceTree = "<group>"; };
+		3A4F1E971621674000AAFA1A /* MockStackOverflowCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockStackOverflowCommunicator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +185,8 @@
 				3A4F1E8916215B8200AAFA1A /* StackOverflowManager.h */,
 				3A4F1E8A16215B8200AAFA1A /* StackOverflowManager.m */,
 				3A4F1E8D16215FFD00AAFA1A /* StackOverflowManagerDelegate.h */,
+				3A4F1E921621672000AAFA1A /* StackOverflowCommunicator.h */,
+				3A4F1E931621672000AAFA1A /* StackOverflowCommunicator.m */,
 			);
 			path = BrowseOverflow;
 			sourceTree = "<group>";
@@ -229,6 +238,8 @@
 			children = (
 				3A4F1E8F162160D400AAFA1A /* MockStackOverflowManagerDelegate.h */,
 				3A4F1E90162160D400AAFA1A /* MockStackOverflowManagerDelegate.m */,
+				3A4F1E961621674000AAFA1A /* MockStackOverflowCommunicator.h */,
+				3A4F1E971621674000AAFA1A /* MockStackOverflowCommunicator.m */,
 			);
 			path = "Mocks, Fakes Stubs";
 			sourceTree = "<group>";
@@ -353,6 +364,7 @@
 				3A4F1E7D162022D200AAFA1A /* Person.m in Sources */,
 				3A4F1E841621391500AAFA1A /* Answer.m in Sources */,
 				3A4F1E8B16215B8200AAFA1A /* StackOverflowManager.m in Sources */,
+				3A4F1E941621672000AAFA1A /* StackOverflowCommunicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +383,8 @@
 				3A4F1E8816215B2E00AAFA1A /* QuestionCreationTests.m in Sources */,
 				3A4F1E8C16215B8200AAFA1A /* StackOverflowManager.m in Sources */,
 				3A4F1E91162160D400AAFA1A /* MockStackOverflowManagerDelegate.m in Sources */,
+				3A4F1E951621672000AAFA1A /* StackOverflowCommunicator.m in Sources */,
+				3A4F1E981621674000AAFA1A /* MockStackOverflowCommunicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
