@@ -24,3 +24,9 @@
 - (void)receivedQuestionsJSON:(NSString *)objectNotation;
 
 @end
+
+extern NSString *StackOverflowManagerError;
+
+enum {
+    StackOverflowManagerErrorQuestionSearchCode
+};

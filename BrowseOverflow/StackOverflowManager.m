@@ -6,16 +6,16 @@
 //  Copyright (c) 2012 Chang Chia-huai. All rights reserved.
 //
 
-extern NSString *StackOverflowManagerError;
-
-enum {
-    StackOverflowManagerErrorQuestionSearchCode
-};
-
 #import "StackOverflowManager.h"
 #import "StackOverflowCommunicator.h"
 #import "QuestionBuilder.h"
 #import "Topic.h"
+
+@interface StackOverflowManager ()
+
+- (void)tellDelegateAboutQuestionSearchError:(NSError *)underlyingError;
+
+@end
 
 @implementation StackOverflowManager
 
@@ -35,13 +35,27 @@ enum {
 }
 
 - (void)searchingForQuestionsFailedWithError:(NSError *)error {
-    NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
-    NSError *reportableError = [NSError errorWithDomain:StackOverflowManagerError code:StackOverflowManagerErrorQuestionSearchCode userInfo:errorInfo];
-    [delegate fetchingQuestionsFailedWithError:reportableError];
+    [self tellDelegateAboutQuestionSearchError:error];
 }
 
 - (void)receivedQuestionsJSON:(NSString *)objectNotation {
-    NSArray *questions = [questionBuilder questionsFromJSON:objectNotation error:NULL];
+    NSError *error = nil;
+    NSArray *questions = [questionBuilder questionsFromJSON:objectNotation error:&error];
+    if (!questions) {
+        [self tellDelegateAboutQuestionSearchError:error];
+    } else {
+        [delegate didReceiveQuestions:questions];
+    }
+}
+
+#pragma mark Class Continuation
+- (void)tellDelegateAboutQuestionSearchError:(NSError *)underlyingError {
+    NSDictionary *errorInfo = nil;
+    if (underlyingError) {
+        errorInfo = [NSDictionary dictionaryWithObject:underlyingError forKey:NSUnderlyingErrorKey];
+    }
+    NSError *reportableError = [NSError errorWithDomain:StackOverflowManagerError code:StackOverflowManagerErrorQuestionSearchCode userInfo:errorInfo];
+    [delegate fetchingQuestionsFailedWithError:reportableError];
 }
 
 @end
