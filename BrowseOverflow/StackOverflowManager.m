@@ -10,6 +10,7 @@
 #import "StackOverflowCommunicator.h"
 #import "QuestionBuilder.h"
 #import "Topic.h"
+#import "Question.h"
 
 @interface StackOverflowManager ()
 
@@ -22,6 +23,7 @@
 @synthesize delegate;
 @synthesize communicator;
 @synthesize questionBuilder;
+@synthesize questionNeedingBody;
 
 - (void)setDelegate:(id<StackOverflowManagerDelegate>)newDelegate {
     if (newDelegate && ![newDelegate conformsToProtocol:@protocol(StackOverflowManagerDelegate)]) {
@@ -46,6 +48,19 @@
     } else {
         [delegate didReceiveQuestions:questions];
     }
+}
+
+- (void)fetchBodyForQuestion:(Question *)question {
+    self.questionNeedingBody = question;
+    [communicator downloadInformationForQuestionWithID:question.questionID];
+}
+
+- (void)fetchingQuestionBodyFailedWithError:(NSError *)error {
+    [self tellDelegateAboutQuestionSearchError:error];
+}
+
+- (void)receivedQuestionBodyJSON:(NSString *)objectNotation {
+    [questionBuilder fillInDetailsForQuestion:self.questionNeedingBody fromJSON:objectNotation];
 }
 
 #pragma mark Class Continuation

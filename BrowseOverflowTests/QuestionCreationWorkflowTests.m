@@ -17,9 +17,11 @@
 @implementation QuestionCreationWorkflowTests {
     StackOverflowManager *mgr;
     MockStackOverflowManagerDelegate *delegate;
-    NSError *underlyingError;
     FakeQuestionBuilder *questionBuilder;
+    MockStackOverflowCommunicator *communicator;
+    NSError *underlyingError;
     NSArray *questionArray;
+    Question *questionToFetch;
 }
 
 - (void)setUp {
@@ -29,8 +31,11 @@
     underlyingError = [NSError errorWithDomain:@"Test domain" code:0 userInfo:nil];
     questionBuilder = [[FakeQuestionBuilder alloc] init];
     mgr.questionBuilder = questionBuilder;
-    Question *question = [[Question alloc] init];
-    questionArray = [NSArray arrayWithObject:question];
+    questionToFetch = [[Question alloc] init];
+    questionToFetch.questionID = 1234;
+    questionArray = [NSArray arrayWithObject:questionToFetch];
+    communicator = [[MockStackOverflowCommunicator alloc] init];
+    mgr.communicator = communicator;
 }
 
 - (void)tearDown {
@@ -39,6 +44,8 @@
     underlyingError = nil;
     questionBuilder = nil;
     questionArray = nil;
+    questionToFetch = nil;
+    communicator = nil;
 }
 
 - (void)testNonConformingObjectCannotBeDelegate {
@@ -55,8 +62,6 @@
 }
 
 - (void)testAskingForQuestionsMeansRequestingData {
-    MockStackOverflowCommunicator *communicator = [[MockStackOverflowCommunicator alloc] init];
-    mgr.communicator = communicator;
     Topic *topic = [[Topic alloc] initWithName:@"iPhone" tag:@"tag"];
     [mgr fetchQuestionsOnTopic:topic];
     STAssertTrue([communicator wasAskedToFetchQuestions], @"The communicator should need to fetch data.");
@@ -75,7 +80,6 @@
 - (void)testQuestionJSONIsPassedToQuestionBuilder {
     [mgr receivedQuestionsJSON:@"Fake JSON"];
     STAssertEqualObjects(questionBuilder.JSON, @"Fake JSON", @"Downloaded JSON is sent to the builder");
-    mgr.questionBuilder = nil;
 }
 
 - (void)testDelegateNotifiedOfErrorWhenQuestionBuilderFails {
@@ -83,7 +87,6 @@
     questionBuilder.errorToSet = underlyingError;
     [mgr receivedQuestionsJSON:@"Fake JSON"];
     STAssertNotNil([[[delegate fetchError] userInfo] objectForKey:NSUnderlyingErrorKey], @"The delegate should have found out about the error");
-    mgr.questionBuilder = nil;
 }
 
 - (void)testDelegateNotToldAboutErrorWhenQuestionsReceived {
@@ -102,6 +105,27 @@
     questionBuilder.arrayToReturn = [NSArray array];
     [mgr receivedQuestionsJSON:@"Fake JSON"];
     STAssertEqualObjects([delegate fetchedQuestions], [NSArray array], @"Returning an empty array is not an error");
+}
+
+- (void)testAskingForQuestionBodyMeansRequestingData {
+    [mgr fetchBodyForQuestion:questionToFetch];
+    STAssertTrue([communicator wasAskedToFetchBody], @"The communicator should need to retrieve data for the question body");
+}
+
+- (void)testDelegateNotifiedOfFailureToFetchQuestion {
+    [mgr fetchingQuestionBodyFailedWithError:underlyingError];
+    STAssertNotNil([[[delegate fetchError] userInfo] objectForKey:NSUnderlyingErrorKey], @"Delegate should have found out about this error");
+}
+
+- (void)testManagerPassesRetrievedQuestionBodyToQuestionBuilder {
+    [mgr receivedQuestionBodyJSON:@"Fake JSON"];
+    STAssertEqualObjects(questionBuilder.JSON, @"Fake JSON", @"Successfully-retrieved data should be passed to the builder");
+}
+
+- (void)testManagerPassesQuestionItWasSentToQuestionBuilderForFillingIn {
+    [mgr fetchBodyForQuestion:questionToFetch];
+    [mgr receivedQuestionBodyJSON:@"Fake JSON"];
+    STAssertEqualObjects(questionBuilder.questionToFill, questionToFetch, @"The question should have been passed to the builder");
 }
 
 @end

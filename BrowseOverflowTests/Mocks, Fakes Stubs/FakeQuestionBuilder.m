@@ -14,6 +14,7 @@
 @synthesize JSON;
 @synthesize arrayToReturn;
 @synthesize errorToSet;
+@synthesize questionToFill;
 
 - (NSArray *)questionsFromJSON:(NSString *)objectNotation error:(NSError **)error {
     self.JSON = objectNotation;
@@ -21,6 +22,11 @@
         *error = errorToSet;
     }
     return arrayToReturn;
+}
+
+- (void)fillInDetailsForQuestion:(Question *)question fromJSON:(NSString *)objectNotation {
+    self.JSON = objectNotation;
+    self.questionToFill = question;
 }
 
 @end

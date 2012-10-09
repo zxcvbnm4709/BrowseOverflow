@@ -10,6 +10,7 @@
 
 @implementation MockStackOverflowCommunicator {
     BOOL wasAskedToFetchQuestions;
+    BOOL wasAskedToFetchBody;
 }
 
 - (void)searchForQuestionsWithTag:(NSString *)tag {
@@ -18,6 +19,14 @@
 
 - (BOOL)wasAskedToFetchQuestions {
     return wasAskedToFetchQuestions;
+}
+
+- (void)downloadInformationForQuestionWithID:(NSInteger)identifier {
+    wasAskedToFetchBody = YES;
+}
+
+- (BOOL)wasAskedToFetchBody {
+    return wasAskedToFetchBody;
 }
 
 @end

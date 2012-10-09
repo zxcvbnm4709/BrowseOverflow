@@ -12,16 +12,21 @@
 @class StackOverflowCommunicator;
 @class QuestionBuilder;
 @class Topic;
+@class Question;
 
 @interface StackOverflowManager : NSObject
 
 @property (weak, nonatomic) id<StackOverflowManagerDelegate> delegate;
 @property StackOverflowCommunicator *communicator;
 @property QuestionBuilder *questionBuilder;
+@property Question *questionNeedingBody;
 
 - (void)fetchQuestionsOnTopic:(Topic *)topic;
 - (void)searchingForQuestionsFailedWithError:(NSError *)error;
 - (void)receivedQuestionsJSON:(NSString *)objectNotation;
+- (void)fetchBodyForQuestion:(Question *)question;
+- (void)fetchingQuestionBodyFailedWithError:(NSError *)error;
+- (void)receivedQuestionBodyJSON:(NSString *)objectNotation;
 
 @end
 
