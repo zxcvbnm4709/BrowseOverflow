@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Chang Chia-huai. All rights reserved.
 //
 
-#import "QuestionCreationTests.h"
+#import "QuestionCreationWorkflowTests.h"
 #import "StackOverflowManager.h"
 #import "MockStackOverflowManagerDelegate.h"
 #import "MockStackOverflowCommunicator.h"
@@ -14,7 +14,7 @@
 #import "Question.h"
 #import "FakeQuestionBuilder.h"
 
-@implementation QuestionCreationTests {
+@implementation QuestionCreationWorkflowTests {
     StackOverflowManager *mgr;
     MockStackOverflowManagerDelegate *delegate;
     NSError *underlyingError;

@@ -25,7 +25,7 @@
 
 @end
 
-extern NSString *StackOverflowManagerError;
+extern NSString *StackOverflowManagerErrorDomain;
 
 enum {
     StackOverflowManagerErrorQuestionSearchCode

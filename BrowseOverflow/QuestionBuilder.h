@@ -13,3 +13,10 @@
 - (NSArray *)questionsFromJSON:(NSString *)objectNotation error:(NSError **)error;
 
 @end
+
+extern NSString *QuestionBuilderErrorDomain;
+
+enum {
+    QuestionBuilderErrorInvalidJSONCode,
+    QuestionBuilderErrorMissingDataCode
+};

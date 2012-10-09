@@ -54,10 +54,10 @@
     if (underlyingError) {
         errorInfo = [NSDictionary dictionaryWithObject:underlyingError forKey:NSUnderlyingErrorKey];
     }
-    NSError *reportableError = [NSError errorWithDomain:StackOverflowManagerError code:StackOverflowManagerErrorQuestionSearchCode userInfo:errorInfo];
+    NSError *reportableError = [NSError errorWithDomain:StackOverflowManagerErrorDomain code:StackOverflowManagerErrorQuestionSearchCode userInfo:errorInfo];
     [delegate fetchingQuestionsFailedWithError:reportableError];
 }
 
 @end
 
-NSString *StackOverflowManagerError = @"StackOverflowManagerError";
+NSString *StackOverflowManagerErrorDomain = @"StackOverflowManagerError";
