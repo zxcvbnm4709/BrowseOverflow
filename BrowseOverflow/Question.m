@@ -16,6 +16,8 @@
 @synthesize date;
 @synthesize title;
 @synthesize score;
+@synthesize questionID;
+@synthesize asker;
 
 - (id)init {
     if (self = [super init]) {

@@ -7,6 +7,8 @@
 //
 
 #import "QuestionBuilder.h"
+#import "Question.h"
+#import "Person.h"
 
 @implementation QuestionBuilder
 
@@ -29,7 +31,18 @@
         }
         return nil;
     }
-    return nil;
+    NSMutableArray *results = [NSMutableArray arrayWithCapacity:[questions count]];
+    for (NSDictionary *parsedQuestion in questions) {
+        Question *thisQuestion = [[Question alloc] init];
+        thisQuestion.questionID = [[parsedQuestion objectForKey:@"question_id"] integerValue];
+        thisQuestion.date = [NSDate dateWithTimeIntervalSince1970:[[parsedQuestion objectForKey:@"creation_date"] doubleValue]];
+        thisQuestion.title = [parsedQuestion objectForKey:@"title"];
+        thisQuestion.score = [[parsedQuestion objectForKey:@"score"] integerValue];
+        NSDictionary *ownerValues = [parsedQuestion objectForKey:@"owner"];
+        thisQuestion.asker = [[Person alloc] initWithName:[ownerValues objectForKey:@"display_name"] avatarLocation:[NSString stringWithFormat:@"http://www.gravatar.com/avatar/%@", [ownerValues objectForKey:@"email_hash"]]];
+        [results addObject:thisQuestion];
+    }
+    return [results copy];
 }
 
 @end
