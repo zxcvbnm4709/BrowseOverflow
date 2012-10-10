@@ -12,6 +12,8 @@
 
 @synthesize fetchError;
 @synthesize fetchedQuestions;
+@synthesize bodyQuestion;
+@synthesize successQuestion;
 
 - (void)fetchingQuestionsFailedWithError:(NSError *)error {
     self.fetchError = error;
@@ -19,6 +21,18 @@
 
 - (void)didReceiveQuestions:(NSArray *)questions {
     self.fetchedQuestions = questions;
+}
+
+- (void)bodyReceivedForQuestion:(Question *)question {
+    self.bodyQuestion = question;
+}
+
+- (void)retrievingAnswersFailedWithError:(NSError *)error {
+    self.fetchError = error;
+}
+
+- (void)answersReceivedForQuestion:(Question *)question {
+    self.successQuestion = question;
 }
 
 @end

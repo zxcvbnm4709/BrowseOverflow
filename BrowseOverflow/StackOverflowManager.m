@@ -9,6 +9,7 @@
 #import "StackOverflowManager.h"
 #import "StackOverflowCommunicator.h"
 #import "QuestionBuilder.h"
+#import "AnswerBuilder.h"
 #import "Topic.h"
 #import "Question.h"
 
@@ -24,6 +25,8 @@
 @synthesize communicator;
 @synthesize questionBuilder;
 @synthesize questionNeedingBody;
+@synthesize answerBuilder;
+@synthesize questionToFill;
 
 - (void)setDelegate:(id<StackOverflowManagerDelegate>)newDelegate {
     if (newDelegate && ![newDelegate conformsToProtocol:@protocol(StackOverflowManagerDelegate)]) {
@@ -31,6 +34,8 @@
     }
     delegate = newDelegate;
 }
+
+#pragma mark Questions
 
 - (void)fetchQuestionsOnTopic:(Topic *)topic {
     [communicator searchForQuestionsWithTag:[topic tag]];
@@ -61,6 +66,34 @@
 
 - (void)receivedQuestionBodyJSON:(NSString *)objectNotation {
     [questionBuilder fillInDetailsForQuestion:self.questionNeedingBody fromJSON:objectNotation];
+    [delegate bodyReceivedForQuestion:self.questionNeedingBody];
+}
+
+#pragma mark Answers
+
+- (void)fetchAnswersForQuestion:(Question *)question {
+    self.questionToFill = question;
+    [communicator downloadAnswersToQuestionWithID:question.questionID];
+}
+
+- (void)fetchingAnswersFailedWithError:(NSError *)error {
+    self.questionToFill = nil;
+    NSDictionary *userInfo = nil;
+    if (error) {
+        userInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
+    }
+    NSError *reportableError = [NSError errorWithDomain:StackOverflowManagerErrorDomain code:StackOverflowManagerErrorAnswerFetchCode userInfo:userInfo];
+    [delegate retrievingAnswersFailedWithError:reportableError];
+}
+
+- (void)receivedAnswerListJSON:(NSString *)objectNotation {
+    NSError *error = nil;
+    if ([self.answerBuilder addAnswersToQuestion:self.questionToFill fromJSON:objectNotation error:&error]) {
+        [delegate answersReceivedForQuestion:self.questionToFill];
+        self.questionToFill = nil;
+    } else {
+        [self fetchingAnswersFailedWithError:error];
+    }
 }
 
 #pragma mark Class Continuation

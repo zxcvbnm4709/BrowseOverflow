@@ -12,5 +12,6 @@
 
 - (void)searchForQuestionsWithTag:(NSString *)tag;
 - (void)downloadInformationForQuestionWithID:(NSInteger)identifier;
+- (void)downloadAnswersToQuestionWithID:(NSInteger)identifier;
 
 @end

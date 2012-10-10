@@ -14,6 +14,8 @@
 #import "Question.h"
 #import "FakeQuestionBuilder.h"
 
+static NSString *fakeJSONString = @"Fake JSON";
+
 @implementation QuestionCreationWorkflowTests {
     StackOverflowManager *mgr;
     MockStackOverflowManagerDelegate *delegate;
@@ -78,32 +80,32 @@
 }
 
 - (void)testQuestionJSONIsPassedToQuestionBuilder {
-    [mgr receivedQuestionsJSON:@"Fake JSON"];
-    STAssertEqualObjects(questionBuilder.JSON, @"Fake JSON", @"Downloaded JSON is sent to the builder");
+    [mgr receivedQuestionsJSON:fakeJSONString];
+    STAssertEqualObjects(questionBuilder.JSON, fakeJSONString, @"Downloaded JSON is sent to the builder");
 }
 
 - (void)testDelegateNotifiedOfErrorWhenQuestionBuilderFails {
     questionBuilder.arrayToReturn = nil;
     questionBuilder.errorToSet = underlyingError;
-    [mgr receivedQuestionsJSON:@"Fake JSON"];
+    [mgr receivedQuestionsJSON:fakeJSONString];
     STAssertNotNil([[[delegate fetchError] userInfo] objectForKey:NSUnderlyingErrorKey], @"The delegate should have found out about the error");
 }
 
 - (void)testDelegateNotToldAboutErrorWhenQuestionsReceived {
     questionBuilder.arrayToReturn = questionArray;
-    [mgr receivedQuestionsJSON:@"Fake JSON"];
+    [mgr receivedQuestionsJSON:fakeJSONString];
     STAssertNil([delegate fetchError], @"No error should be received on success");
 }
 
 - (void)testDelegateReceivesTheQuestionsDiscoveredByManager {
     questionBuilder.arrayToReturn = questionArray;
-    [mgr receivedQuestionsJSON:@"Fake JSON"];
+    [mgr receivedQuestionsJSON:fakeJSONString];
     STAssertEqualObjects([delegate fetchedQuestions], questionArray, @"The manager should have sent its questions to the delegate");
 }
 
 - (void)testEmptyArrayIsPassedToDelegate {
     questionBuilder.arrayToReturn = [NSArray array];
-    [mgr receivedQuestionsJSON:@"Fake JSON"];
+    [mgr receivedQuestionsJSON:fakeJSONString];
     STAssertEqualObjects([delegate fetchedQuestions], [NSArray array], @"Returning an empty array is not an error");
 }
 
@@ -118,14 +120,20 @@
 }
 
 - (void)testManagerPassesRetrievedQuestionBodyToQuestionBuilder {
-    [mgr receivedQuestionBodyJSON:@"Fake JSON"];
-    STAssertEqualObjects(questionBuilder.JSON, @"Fake JSON", @"Successfully-retrieved data should be passed to the builder");
+    [mgr receivedQuestionBodyJSON:fakeJSONString];
+    STAssertEqualObjects(questionBuilder.JSON, fakeJSONString, @"Successfully-retrieved data should be passed to the builder");
 }
 
 - (void)testManagerPassesQuestionItWasSentToQuestionBuilderForFillingIn {
     [mgr fetchBodyForQuestion:questionToFetch];
-    [mgr receivedQuestionBodyJSON:@"Fake JSON"];
+    [mgr receivedQuestionBodyJSON:fakeJSONString];
     STAssertEqualObjects(questionBuilder.questionToFill, questionToFetch, @"The question should have been passed to the builder");
+}
+
+- (void)testManagerNotifiesDelegateWhenQuestionBodyIsReceived {
+    [mgr fetchBodyForQuestion:questionToFetch];
+    [mgr receivedQuestionBodyJSON:fakeJSONString];
+    STAssertEqualObjects(delegate.bodyQuestion, questionToFetch, @"Update delegate when question body filled"); 
 }
 
 @end

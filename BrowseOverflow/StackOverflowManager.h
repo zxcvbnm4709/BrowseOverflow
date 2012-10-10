@@ -13,13 +13,16 @@
 @class QuestionBuilder;
 @class Topic;
 @class Question;
+@class AnswerBuilder;
 
 @interface StackOverflowManager : NSObject
 
 @property (weak, nonatomic) id<StackOverflowManagerDelegate> delegate;
 @property StackOverflowCommunicator *communicator;
 @property QuestionBuilder *questionBuilder;
+@property AnswerBuilder *answerBuilder;
 @property Question *questionNeedingBody;
+@property Question *questionToFill;
 
 - (void)fetchQuestionsOnTopic:(Topic *)topic;
 - (void)searchingForQuestionsFailedWithError:(NSError *)error;
@@ -28,10 +31,15 @@
 - (void)fetchingQuestionBodyFailedWithError:(NSError *)error;
 - (void)receivedQuestionBodyJSON:(NSString *)objectNotation;
 
+- (void)fetchAnswersForQuestion:(Question *)question;
+- (void)fetchingAnswersFailedWithError:(NSError *)error;
+- (void)receivedAnswerListJSON:(NSString *)objectNotation;
+
 @end
 
 extern NSString *StackOverflowManagerErrorDomain;
 
 enum {
-    StackOverflowManagerErrorQuestionSearchCode
+    StackOverflowManagerErrorQuestionSearchCode,
+    StackOverflowManagerErrorAnswerFetchCode
 };

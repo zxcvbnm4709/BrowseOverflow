@@ -7,6 +7,7 @@
 //
 
 #import "QuestionBuilder.h"
+#import "PersonBuilder.h"
 #import "Question.h"
 #import "Person.h"
 
@@ -39,10 +40,19 @@
         thisQuestion.title = [parsedQuestion objectForKey:@"title"];
         thisQuestion.score = [[parsedQuestion objectForKey:@"score"] integerValue];
         NSDictionary *ownerValues = [parsedQuestion objectForKey:@"owner"];
-        thisQuestion.asker = [[Person alloc] initWithName:[ownerValues objectForKey:@"display_name"] avatarLocation:[NSString stringWithFormat:@"http://www.gravatar.com/avatar/%@", [ownerValues objectForKey:@"email_hash"]]];
+        thisQuestion.asker = [PersonBuilder personFromDictionary:ownerValues];
         [results addObject:thisQuestion];
     }
     return [results copy];
+}
+
+- (void)fillInDetailsForQuestion:(Question *)question fromJSON:(NSString *)objectNotation {
+    NSParameterAssert(question != nil);
+    NSParameterAssert(objectNotation != nil);
+    NSData *unicodeNotation = [objectNotation dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:unicodeNotation options:0 error:NULL];
+    NSString *questionBody = [[[parsedObject objectForKey:@"questions"] lastObject] objectForKey:@"body"];
+    question.body = questionBody;
 }
 
 @end

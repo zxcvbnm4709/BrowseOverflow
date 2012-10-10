@@ -117,4 +117,32 @@ static NSString *emptyQuestionsArray = @"{ \"questions\" : [{}] }";
     STAssertEquals([questions count], (NSUInteger)1, @"QuestionBuilder must handle partial input");
 }
 
+
+- (void)testBuildingQuestionBodyWithNoDataCannotBeTried {
+    STAssertThrows([questionBuilder fillInDetailsForQuestion:question fromJSON:nil], @"Not receiving data should have been handled earlier");
+}
+
+- (void)testBuildingQuestionBodyWithNoQuestionCannotBeTried {
+    STAssertThrows([questionBuilder fillInDetailsForQuestion:nil fromJSON:questionJSON], @"No reason to expect that a nil question is passed");
+}
+
+- (void)testNonJSONDataDoesNotCauseABodyToBeAddedToAQuestion {
+    [questionBuilder fillInDetailsForQuestion:question fromJSON:stringIsNotJSON];
+    STAssertNil(question.body, @"Body should not have been added");
+}
+
+- (void)testJSONWhichDoesNotContainABodyToBeAddedDoesNotCauseBodyToBeAdded {
+    [questionBuilder fillInDetailsForQuestion:question fromJSON:noQuestionsJSONString];
+    STAssertNil(question.body, @"There was no body to be added");
+}
+
+- (void)testBodyContainedInJSONIsAddedToQuestion {
+    [questionBuilder fillInDetailsForQuestion:question fromJSON:questionJSON];
+    STAssertEqualObjects(question.body, @"<p>I've been trying to use persistent keychain references.</p>", @"The correct question body is added");
+}
+
+- (void)testEmptyQuestionsArrayDoesNotCrash {
+    STAssertNoThrow([questionBuilder fillInDetailsForQuestion:question fromJSON:emptyQuestionsArray], @"Don't throw if no questions are found");
+}
+
 @end

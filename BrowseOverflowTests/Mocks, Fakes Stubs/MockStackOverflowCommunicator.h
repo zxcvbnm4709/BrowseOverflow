@@ -12,5 +12,6 @@
 
 - (BOOL)wasAskedToFetchQuestions;
 - (BOOL)wasAskedToFetchBody;
+- (NSInteger)askedForAnswersToQuestionID;
 
 @end

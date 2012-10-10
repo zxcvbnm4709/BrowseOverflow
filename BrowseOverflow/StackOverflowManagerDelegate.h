@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @class Topic;
+@class Question;
 
 @protocol StackOverflowManagerDelegate <NSObject>
 
 - (void)fetchingQuestionsFailedWithError:(NSError *)error;
 - (void)didReceiveQuestions:(NSArray *)questions;
+- (void)bodyReceivedForQuestion:(Question *)question;
+- (void)retrievingAnswersFailedWithError:(NSError *)error;
+- (void)answersReceivedForQuestion:(Question *)question;
 
 @end

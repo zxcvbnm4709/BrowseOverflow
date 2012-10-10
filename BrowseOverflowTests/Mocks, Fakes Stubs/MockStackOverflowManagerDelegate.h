@@ -13,5 +13,7 @@
 
 @property NSError *fetchError;
 @property NSArray *fetchedQuestions;
+@property Question *bodyQuestion;
+@property Question *successQuestion;
 
 @end

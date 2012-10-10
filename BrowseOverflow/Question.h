@@ -19,6 +19,7 @@
 @property (readonly) NSArray *answers;
 @property NSInteger questionID;
 @property Person *asker;
+@property NSString *body;
 
 - (void)addAnswer:(Answer *)answer;
 

@@ -18,6 +18,7 @@
 @synthesize score;
 @synthesize questionID;
 @synthesize asker;
+@synthesize body;
 
 - (id)init {
     if (self = [super init]) {
