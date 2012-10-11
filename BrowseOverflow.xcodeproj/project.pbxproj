@@ -46,6 +46,9 @@
 		3A555CE716259043002EE2D4 /* AnswerBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A555CE616259043002EE2D4 /* AnswerBuilderTests.m */; };
 		3A555CEB162629EF002EE2D4 /* StackOverflowCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A555CEA162629EF002EE2D4 /* StackOverflowCommunicatorTests.m */; };
 		3A555CEE16268E5E002EE2D4 /* InspectableStackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A555CED16268E5E002EE2D4 /* InspectableStackOverflowCommunicator.m */; };
+		3A555CF11626A31B002EE2D4 /* NonNetworkedStackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A555CF01626A31B002EE2D4 /* NonNetworkedStackOverflowCommunicator.m */; };
+		3A555CF81626BAF5002EE2D4 /* MockStackOverflowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A555CF71626BAF4002EE2D4 /* MockStackOverflowManager.m */; };
+		3A555CFB1626BB8D002EE2D4 /* FakeURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A555CFA1626BB8D002EE2D4 /* FakeURLResponse.m */; };
 		3ABC635116218F9B00FEDD4A /* QuestionBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABC635016218F9A00FEDD4A /* QuestionBuilder.m */; };
 		3ABC635216218F9B00FEDD4A /* QuestionBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABC635016218F9A00FEDD4A /* QuestionBuilder.m */; };
 		3ABC635616218FE800FEDD4A /* FakeQuestionBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABC635516218FE800FEDD4A /* FakeQuestionBuilder.m */; };
@@ -125,6 +128,13 @@
 		3A555CEA162629EF002EE2D4 /* StackOverflowCommunicatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackOverflowCommunicatorTests.m; sourceTree = "<group>"; };
 		3A555CEC16268E5E002EE2D4 /* InspectableStackOverflowCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectableStackOverflowCommunicator.h; sourceTree = "<group>"; };
 		3A555CED16268E5E002EE2D4 /* InspectableStackOverflowCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectableStackOverflowCommunicator.m; sourceTree = "<group>"; };
+		3A555CEF1626A31A002EE2D4 /* NonNetworkedStackOverflowCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonNetworkedStackOverflowCommunicator.h; sourceTree = "<group>"; };
+		3A555CF01626A31B002EE2D4 /* NonNetworkedStackOverflowCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonNetworkedStackOverflowCommunicator.m; sourceTree = "<group>"; };
+		3A555CF21626AABA002EE2D4 /* StackOverflowCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackOverflowCommunicatorDelegate.h; sourceTree = "<group>"; };
+		3A555CF61626BAF4002EE2D4 /* MockStackOverflowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockStackOverflowManager.h; sourceTree = "<group>"; };
+		3A555CF71626BAF4002EE2D4 /* MockStackOverflowManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockStackOverflowManager.m; sourceTree = "<group>"; };
+		3A555CF91626BB8C002EE2D4 /* FakeURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeURLResponse.h; sourceTree = "<group>"; };
+		3A555CFA1626BB8D002EE2D4 /* FakeURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeURLResponse.m; sourceTree = "<group>"; };
 		3ABC634F16218F9A00FEDD4A /* QuestionBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionBuilder.h; sourceTree = "<group>"; };
 		3ABC635016218F9A00FEDD4A /* QuestionBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionBuilder.m; sourceTree = "<group>"; };
 		3ABC635416218FE800FEDD4A /* FakeQuestionBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeQuestionBuilder.h; sourceTree = "<group>"; };
@@ -226,6 +236,7 @@
 				3AD31A59162453CF0099D69D /* PersonBuilder.m */,
 				3AD31A5F162458D20099D69D /* AnswerBuilder.h */,
 				3AD31A60162458D20099D69D /* AnswerBuilder.m */,
+				3A555CF21626AABA002EE2D4 /* StackOverflowCommunicatorDelegate.h */,
 			);
 			path = BrowseOverflow;
 			sourceTree = "<group>";
@@ -293,6 +304,12 @@
 				3AD31A64162458EB0099D69D /* FakeAnswerBuilder.m */,
 				3A555CEC16268E5E002EE2D4 /* InspectableStackOverflowCommunicator.h */,
 				3A555CED16268E5E002EE2D4 /* InspectableStackOverflowCommunicator.m */,
+				3A555CEF1626A31A002EE2D4 /* NonNetworkedStackOverflowCommunicator.h */,
+				3A555CF01626A31B002EE2D4 /* NonNetworkedStackOverflowCommunicator.m */,
+				3A555CF61626BAF4002EE2D4 /* MockStackOverflowManager.h */,
+				3A555CF71626BAF4002EE2D4 /* MockStackOverflowManager.m */,
+				3A555CF91626BB8C002EE2D4 /* FakeURLResponse.h */,
+				3A555CFA1626BB8D002EE2D4 /* FakeURLResponse.m */,
 			);
 			path = "Mocks, Fakes Stubs";
 			sourceTree = "<group>";
@@ -451,6 +468,9 @@
 				3A555CE716259043002EE2D4 /* AnswerBuilderTests.m in Sources */,
 				3A555CEB162629EF002EE2D4 /* StackOverflowCommunicatorTests.m in Sources */,
 				3A555CEE16268E5E002EE2D4 /* InspectableStackOverflowCommunicator.m in Sources */,
+				3A555CF11626A31B002EE2D4 /* NonNetworkedStackOverflowCommunicator.m in Sources */,
+				3A555CF81626BAF5002EE2D4 /* MockStackOverflowManager.m in Sources */,
+				3A555CFB1626BB8D002EE2D4 /* FakeURLResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

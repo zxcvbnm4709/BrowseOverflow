@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "StackOverflowManagerDelegate.h"
+#import "StackOverflowCommunicatorDelegate.h"
 
 @class StackOverflowCommunicator;
 @class QuestionBuilder;
@@ -15,7 +16,7 @@
 @class Question;
 @class AnswerBuilder;
 
-@interface StackOverflowManager : NSObject
+@interface StackOverflowManager : NSObject <StackOverflowCommunicatorDelegate>
 
 @property (weak, nonatomic) id<StackOverflowManagerDelegate> delegate;
 @property StackOverflowCommunicator *communicator;
@@ -25,15 +26,8 @@
 @property Question *questionToFill;
 
 - (void)fetchQuestionsOnTopic:(Topic *)topic;
-- (void)searchingForQuestionsFailedWithError:(NSError *)error;
-- (void)receivedQuestionsJSON:(NSString *)objectNotation;
 - (void)fetchBodyForQuestion:(Question *)question;
-- (void)fetchingQuestionBodyFailedWithError:(NSError *)error;
-- (void)receivedQuestionBodyJSON:(NSString *)objectNotation;
-
 - (void)fetchAnswersForQuestion:(Question *)question;
-- (void)fetchingAnswersFailedWithError:(NSError *)error;
-- (void)receivedAnswerListJSON:(NSString *)objectNotation;
 
 @end
 
