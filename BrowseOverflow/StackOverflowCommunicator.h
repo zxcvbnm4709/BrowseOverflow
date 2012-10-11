@@ -8,10 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface StackOverflowCommunicator : NSObject
+@interface StackOverflowCommunicator : NSObject {
+@protected
+    NSURL *fetchingURL;
+    NSURLConnection *fetchingConnection;
+}
 
 - (void)searchForQuestionsWithTag:(NSString *)tag;
 - (void)downloadInformationForQuestionWithID:(NSInteger)identifier;
 - (void)downloadAnswersToQuestionWithID:(NSInteger)identifier;
+
+- (void)cancelAndDiscardURLConnection;
 
 @end
