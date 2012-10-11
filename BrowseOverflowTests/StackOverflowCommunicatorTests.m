@@ -101,4 +101,12 @@
     STAssertEqualObjects([manager topicSearchString], @"Result", @"The delegate should have received data on success");
 }
 
+- (void)testAdditionalDataAppendedToDownload {
+    [nnCommunicator setReceivedData:receivedData];
+    NSData *extraData = [@" appended" dataUsingEncoding:NSUTF8StringEncoding];
+    [nnCommunicator connection:nil didReceiveData:extraData];
+    NSString *combinedString = [[NSString alloc] initWithData:[nnCommunicator receivedData] encoding:NSUTF8StringEncoding];
+    STAssertEqualObjects(combinedString, @"Result appended", @"Received data should be appended to the downloaded data");
+}
+
 @end

@@ -107,6 +107,10 @@
     successHandler(receivedText);
 }
 
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    [receivedData appendData:data];
+}
+
 - (void)dealloc {
     [fetchingConnection cancel];
 }
