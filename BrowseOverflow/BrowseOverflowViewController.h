@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class TopicTableDelegate;
+
 @interface BrowseOverflowViewController : UIViewController
 
 @property UITableView *tableView;
 @property id <UITableViewDataSource> dataSource;
-@property id <UITableViewDelegate> tableViewDelegate;
+@property TopicTableDelegate *tableViewDelegate;
 
 @end

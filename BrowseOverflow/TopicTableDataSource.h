@@ -1,5 +1,5 @@
 //
-//  EmptyTableViewDelegate.h
+//  EmptyTableViewDataSource.h
 //  BrowseOverflow
 //
 //  Created by Chang Chia-huai on 10/12/12.
@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EmptyTableViewDelegate : NSObject <UITableViewDelegate>
+@interface TopicTableDataSource : NSObject <UITableViewDataSource>
+
+- (void)setTopics:(NSArray *)newTopics;
 
 @end

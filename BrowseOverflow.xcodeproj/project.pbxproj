@@ -64,10 +64,11 @@
 		3AE7D1711627C60A005C23DE /* BrowseOverflowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7D16E1627C60A005C23DE /* BrowseOverflowViewController.xib */; };
 		3AE7D1721627C60A005C23DE /* BrowseOverflowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7D16E1627C60A005C23DE /* BrowseOverflowViewController.xib */; };
 		3AE7D1761627C62F005C23DE /* BrowseOverflowViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D1751627C62F005C23DE /* BrowseOverflowViewControllerTests.m */; };
-		3AE7D17C1627DDC1005C23DE /* EmptyTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D17B1627DDC1005C23DE /* EmptyTableViewDelegate.m */; };
+		3AE7D17C1627DDC1005C23DE /* TopicTableDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D17B1627DDC1005C23DE /* TopicTableDelegate.m */; };
 		3AE7D17D1627DFD3005C23DE /* TopicTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D1781627DD50005C23DE /* TopicTableDataSource.m */; };
 		3AE7D17F1627E192005C23DE /* TopicTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D1781627DD50005C23DE /* TopicTableDataSource.m */; };
 		3AE7D1821627E334005C23DE /* TopicTableDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D1811627E334005C23DE /* TopicTableDataSourceTests.m */; };
+		3AE7D18316281CED005C23DE /* TopicTableDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D17B1627DDC1005C23DE /* TopicTableDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,8 +166,8 @@
 		3AE7D1751627C62F005C23DE /* BrowseOverflowViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseOverflowViewControllerTests.m; sourceTree = "<group>"; };
 		3AE7D1771627DD50005C23DE /* TopicTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicTableDataSource.h; path = BrowseOverflow/TopicTableDataSource.h; sourceTree = SOURCE_ROOT; };
 		3AE7D1781627DD50005C23DE /* TopicTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicTableDataSource.m; path = BrowseOverflow/TopicTableDataSource.m; sourceTree = SOURCE_ROOT; };
-		3AE7D17A1627DDC1005C23DE /* EmptyTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyTableViewDelegate.h; sourceTree = "<group>"; };
-		3AE7D17B1627DDC1005C23DE /* EmptyTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyTableViewDelegate.m; sourceTree = "<group>"; };
+		3AE7D17A1627DDC1005C23DE /* TopicTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicTableDelegate.h; path = BrowseOverflow/TopicTableDelegate.h; sourceTree = SOURCE_ROOT; };
+		3AE7D17B1627DDC1005C23DE /* TopicTableDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicTableDelegate.m; path = BrowseOverflow/TopicTableDelegate.m; sourceTree = SOURCE_ROOT; };
 		3AE7D1801627E334005C23DE /* TopicTableDataSourceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicTableDataSourceTests.h; sourceTree = "<group>"; };
 		3AE7D1811627E334005C23DE /* TopicTableDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicTableDataSourceTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -262,6 +263,8 @@
 				3AE7D16E1627C60A005C23DE /* BrowseOverflowViewController.xib */,
 				3AE7D1771627DD50005C23DE /* TopicTableDataSource.h */,
 				3AE7D1781627DD50005C23DE /* TopicTableDataSource.m */,
+				3AE7D17A1627DDC1005C23DE /* TopicTableDelegate.h */,
+				3AE7D17B1627DDC1005C23DE /* TopicTableDelegate.m */,
 			);
 			path = BrowseOverflow;
 			sourceTree = "<group>";
@@ -339,8 +342,6 @@
 				3A555CF71626BAF4002EE2D4 /* MockStackOverflowManager.m */,
 				3A555CF91626BB8C002EE2D4 /* FakeURLResponse.h */,
 				3A555CFA1626BB8D002EE2D4 /* FakeURLResponse.m */,
-				3AE7D17A1627DDC1005C23DE /* EmptyTableViewDelegate.h */,
-				3AE7D17B1627DDC1005C23DE /* EmptyTableViewDelegate.m */,
 			);
 			path = "Mocks, Fakes Stubs";
 			sourceTree = "<group>";
@@ -473,6 +474,7 @@
 				3AD31A61162458D20099D69D /* AnswerBuilder.m in Sources */,
 				3AE7D16F1627C60A005C23DE /* BrowseOverflowViewController.m in Sources */,
 				3AE7D17D1627DFD3005C23DE /* TopicTableDataSource.m in Sources */,
+				3AE7D18316281CED005C23DE /* TopicTableDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,7 +510,7 @@
 				3A555CFB1626BB8D002EE2D4 /* FakeURLResponse.m in Sources */,
 				3AE7D1701627C60A005C23DE /* BrowseOverflowViewController.m in Sources */,
 				3AE7D1761627C62F005C23DE /* BrowseOverflowViewControllerTests.m in Sources */,
-				3AE7D17C1627DDC1005C23DE /* EmptyTableViewDelegate.m in Sources */,
+				3AE7D17C1627DDC1005C23DE /* TopicTableDelegate.m in Sources */,
 				3AE7D17F1627E192005C23DE /* TopicTableDataSource.m in Sources */,
 				3AE7D1821627E334005C23DE /* TopicTableDataSourceTests.m in Sources */,
 			);
