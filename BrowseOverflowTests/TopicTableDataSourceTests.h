@@ -1,13 +1,13 @@
 //
-//  EmptyTableViewDataSource.h
+//  TopicTableDataSourceTests.h
 //  BrowseOverflow
 //
 //  Created by Chang Chia-huai on 10/12/12.
 //  Copyright (c) 2012 Chang Chia-huai. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <SenTestingKit/SenTestingKit.h>
 
-@interface EmptyTableViewDataSource : NSObject <UITableViewDataSource>
+@interface TopicTableDataSourceTests : SenTestCase
 
 @end
