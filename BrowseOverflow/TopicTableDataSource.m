@@ -19,6 +19,10 @@ NSString *topicCellReuseIdentifier = @"Topic";
     topics = newTopics;
 }
 
+- (Topic *)topicForIndexPath:(NSIndexPath *)indexPath {
+    return [topics objectAtIndex:[indexPath row]];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSParameterAssert(section == 0);
     return [topics count];
@@ -29,9 +33,9 @@ NSString *topicCellReuseIdentifier = @"Topic";
     NSParameterAssert([indexPath row] < [topics count]);
     UITableViewCell *topicCell = [tableView dequeueReusableCellWithIdentifier:topicCellReuseIdentifier];
     if (!topicCell) {
-        topicCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Topic"];
+        topicCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:topicCellReuseIdentifier];
     }
-    topicCell.textLabel.text = [[topics objectAtIndex:[indexPath row]] name];
+    topicCell.textLabel.text = [[self topicForIndexPath:indexPath] name];
     return topicCell;
 }
 
