@@ -9,6 +9,12 @@
 #import "TopicTableDataSource.h"
 #import "Topic.h"
 
+@interface TopicTableDataSource()
+
+- (Topic *)topicForIndexPath:(NSIndexPath *)indexPath;
+
+@end
+
 NSString *topicCellReuseIdentifier = @"Topic";
 
 @implementation TopicTableDataSource {
@@ -39,4 +45,11 @@ NSString *topicCellReuseIdentifier = @"Topic";
     return topicCell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSNotification *note = [NSNotification notificationWithName:TopicTableDidSelectTopicNotification object:[self topicForIndexPath:indexPath]];
+    [[NSNotificationCenter defaultCenter] postNotification:note];
+}
+
 @end
+
+NSString *TopicTableDidSelectTopicNotification = @"TopicTableDidSelectTopicNotification";
