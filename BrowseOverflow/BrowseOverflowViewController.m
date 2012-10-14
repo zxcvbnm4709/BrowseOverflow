@@ -41,6 +41,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:TopicTableDidSelectTopicNotification object:nil];
+    [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning
