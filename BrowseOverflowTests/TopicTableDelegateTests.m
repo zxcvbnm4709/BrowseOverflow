@@ -32,6 +32,7 @@
     dataSource = nil;
     iPhoneTopic = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:TopicTableDidSelectTopicNotification object:nil];
 }
 
 - (void)didReceiveNotification:(NSNotification *)note {
