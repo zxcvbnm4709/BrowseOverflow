@@ -13,4 +13,6 @@
 @property UITableView *tableView;
 @property id <UITableViewDataSource, UITableViewDelegate> dataSource;
 
+- (void)userDidSelectTopicNotification: (NSNotification *)note;
+
 @end

@@ -59,6 +59,11 @@
 		3AD31A61162458D20099D69D /* AnswerBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD31A60162458D20099D69D /* AnswerBuilder.m */; };
 		3AD31A62162458D20099D69D /* AnswerBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD31A60162458D20099D69D /* AnswerBuilder.m */; };
 		3AD31A65162458EC0099D69D /* FakeAnswerBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD31A64162458EB0099D69D /* FakeAnswerBuilder.m */; };
+		3ADB904F162ABFFE005EBD65 /* QuestionListTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB904E162ABFFE005EBD65 /* QuestionListTableDataSource.m */; };
+		3ADB9050162ABFFE005EBD65 /* QuestionListTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB904E162ABFFE005EBD65 /* QuestionListTableDataSource.m */; };
+		3ADB9054162AE5D8005EBD65 /* QuestionListTableDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB9053162AE5D8005EBD65 /* QuestionListTableDataSourceTests.m */; };
+		3ADB9057162AF6D5005EBD65 /* QuestionSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB9056162AF6D5005EBD65 /* QuestionSummaryCell.m */; };
+		3ADB9058162AF6D5005EBD65 /* QuestionSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB9056162AF6D5005EBD65 /* QuestionSummaryCell.m */; };
 		3AE7D16F1627C60A005C23DE /* BrowseOverflowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D16D1627C60A005C23DE /* BrowseOverflowViewController.m */; };
 		3AE7D1701627C60A005C23DE /* BrowseOverflowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7D16D1627C60A005C23DE /* BrowseOverflowViewController.m */; };
 		3AE7D1711627C60A005C23DE /* BrowseOverflowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AE7D16E1627C60A005C23DE /* BrowseOverflowViewController.xib */; };
@@ -158,6 +163,12 @@
 		3AD31A60162458D20099D69D /* AnswerBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerBuilder.m; sourceTree = "<group>"; };
 		3AD31A63162458EB0099D69D /* FakeAnswerBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeAnswerBuilder.h; sourceTree = "<group>"; };
 		3AD31A64162458EB0099D69D /* FakeAnswerBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeAnswerBuilder.m; sourceTree = "<group>"; };
+		3ADB904D162ABFFE005EBD65 /* QuestionListTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListTableDataSource.h; sourceTree = "<group>"; };
+		3ADB904E162ABFFE005EBD65 /* QuestionListTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListTableDataSource.m; sourceTree = "<group>"; };
+		3ADB9052162AE5D8005EBD65 /* QuestionListTableDataSourceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListTableDataSourceTests.h; sourceTree = "<group>"; };
+		3ADB9053162AE5D8005EBD65 /* QuestionListTableDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListTableDataSourceTests.m; sourceTree = "<group>"; };
+		3ADB9055162AF6D5005EBD65 /* QuestionSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionSummaryCell.h; sourceTree = "<group>"; };
+		3ADB9056162AF6D5005EBD65 /* QuestionSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionSummaryCell.m; sourceTree = "<group>"; };
 		3AE7D16C1627C60A005C23DE /* BrowseOverflowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseOverflowViewController.h; sourceTree = "<group>"; };
 		3AE7D16D1627C60A005C23DE /* BrowseOverflowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseOverflowViewController.m; sourceTree = "<group>"; };
 		3AE7D16E1627C60A005C23DE /* BrowseOverflowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowseOverflowViewController.xib; sourceTree = "<group>"; };
@@ -262,6 +273,10 @@
 				3AE7D16E1627C60A005C23DE /* BrowseOverflowViewController.xib */,
 				3AE7D1771627DD50005C23DE /* TopicTableDataSource.h */,
 				3AE7D1781627DD50005C23DE /* TopicTableDataSource.m */,
+				3ADB904D162ABFFE005EBD65 /* QuestionListTableDataSource.h */,
+				3ADB904E162ABFFE005EBD65 /* QuestionListTableDataSource.m */,
+				3ADB9055162AF6D5005EBD65 /* QuestionSummaryCell.h */,
+				3ADB9056162AF6D5005EBD65 /* QuestionSummaryCell.m */,
 			);
 			path = BrowseOverflow;
 			sourceTree = "<group>";
@@ -309,6 +324,8 @@
 				3AE7D1811627E334005C23DE /* TopicTableDataSourceTests.m */,
 				3AE7D184162849AA005C23DE /* TopicTableDelegateTests.h */,
 				3AE7D185162849AA005C23DE /* TopicTableDelegateTests.m */,
+				3ADB9052162AE5D8005EBD65 /* QuestionListTableDataSourceTests.h */,
+				3ADB9053162AE5D8005EBD65 /* QuestionListTableDataSourceTests.m */,
 			);
 			path = BrowseOverflowTests;
 			sourceTree = "<group>";
@@ -473,6 +490,8 @@
 				3AD31A61162458D20099D69D /* AnswerBuilder.m in Sources */,
 				3AE7D16F1627C60A005C23DE /* BrowseOverflowViewController.m in Sources */,
 				3AE7D17D1627DFD3005C23DE /* TopicTableDataSource.m in Sources */,
+				3ADB904F162ABFFE005EBD65 /* QuestionListTableDataSource.m in Sources */,
+				3ADB9057162AF6D5005EBD65 /* QuestionSummaryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +530,9 @@
 				3AE7D17F1627E192005C23DE /* TopicTableDataSource.m in Sources */,
 				3AE7D1821627E334005C23DE /* TopicTableDataSourceTests.m in Sources */,
 				3AE7D186162849AA005C23DE /* TopicTableDelegateTests.m in Sources */,
+				3ADB9050162ABFFE005EBD65 /* QuestionListTableDataSource.m in Sources */,
+				3ADB9054162AE5D8005EBD65 /* QuestionListTableDataSourceTests.m in Sources */,
+				3ADB9058162AF6D5005EBD65 /* QuestionSummaryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
