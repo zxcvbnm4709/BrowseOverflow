@@ -156,4 +156,11 @@ static const char *viewWillDisappearKey = "BrowseOverflowViewControllerTestsView
     STAssertEqualObjects([(QuestionListTableDataSource *)nextViewController.dataSource topic], iPhoneTopic, @"The questions to display should come from the selected topic");
 }
 
+- (void)testViewControllerConnectsTableViewBacklinkInViewDidLoad {
+    QuestionListTableDataSource *questionDataSource = [[QuestionListTableDataSource alloc] init];
+    viewController.dataSource = questionDataSource;
+    [viewController viewDidLoad];
+    STAssertEqualObjects(questionDataSource.tableView, tableView, @"Back-link to table view should be set in data source");
+}
+
 @end

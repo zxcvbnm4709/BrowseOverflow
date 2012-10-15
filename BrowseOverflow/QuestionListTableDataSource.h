@@ -16,5 +16,12 @@
 
 @property Topic *topic;
 @property IBOutlet QuestionSummaryCell *summaryCell;
+@property AvatarStore *avatarStore;
+@property UITableView *tableView;
+@property NSNotificationCenter *notificationCenter;
+
+- (void)registerForUpdatesToAvatarStore:(AvatarStore *)store;
+- (void)removeObservationOfUpdatesToAvatarStore:(AvatarStore *)store;
+- (void)avatarStoreDidUpdateContent:(NSNotification *)notification;
 
 @end

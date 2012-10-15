@@ -9,6 +9,7 @@
 #import "BrowseOverflowViewController.h"
 #import "TopicTableDataSource.h"
 #import "QuestionListTableDataSource.h"
+#import <objc/runtime.h>
 
 @interface BrowseOverflowViewController ()
 
@@ -33,6 +34,10 @@
     [super viewDidLoad];
     self.tableView.delegate = self.dataSource;
     self.tableView.dataSource = self.dataSource;
+    objc_property_t tableViewProperty = class_getProperty([dataSource class], "tableView");
+    if (tableViewProperty) {
+        [dataSource setValue:tableView forKey:@"tableView"];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {

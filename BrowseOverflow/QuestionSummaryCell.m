@@ -13,5 +13,6 @@
 @synthesize titleLabel;
 @synthesize scoreLabel;
 @synthesize nameLabel;
+@synthesize avatarView;
 
 @end
