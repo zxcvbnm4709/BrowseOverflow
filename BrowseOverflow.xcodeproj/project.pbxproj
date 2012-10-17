@@ -16,14 +16,11 @@
 		3A17D36D161EB63700566539 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A17D36C161EB63700566539 /* Default.png */; };
 		3A17D36F161EB63700566539 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A17D36E161EB63700566539 /* Default@2x.png */; };
 		3A17D371161EB63700566539 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A17D370161EB63700566539 /* Default-568h@2x.png */; };
-		3A17D374161EB63700566539 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A17D373161EB63700566539 /* MasterViewController.m */; };
-		3A17D377161EB63700566539 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A17D376161EB63700566539 /* DetailViewController.m */; };
-		3A17D37A161EB63700566539 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A17D378161EB63700566539 /* MasterViewController.xib */; };
-		3A17D37D161EB63700566539 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A17D37B161EB63700566539 /* DetailViewController.xib */; };
 		3A17D385161EB63800566539 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A17D384161EB63800566539 /* SenTestingKit.framework */; };
 		3A17D386161EB63800566539 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A17D35A161EB63600566539 /* UIKit.framework */; };
 		3A17D387161EB63800566539 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A17D35C161EB63600566539 /* Foundation.framework */; };
 		3A17D38F161EB63800566539 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A17D38D161EB63800566539 /* InfoPlist.strings */; };
+		3A31324A162E75AD00DB9870 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A313249162E75AD00DB9870 /* MainWindow.xib */; };
 		3A4F1E68161F067400AAFA1A /* TopicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E67161F067400AAFA1A /* TopicTests.m */; };
 		3A4F1E6B161F06CE00AAFA1A /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E6A161F06CE00AAFA1A /* Topic.m */; };
 		3A4F1E6C161F06CE00AAFA1A /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E6A161F06CE00AAFA1A /* Topic.m */; };
@@ -110,16 +107,11 @@
 		3A17D36C161EB63700566539 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3A17D36E161EB63700566539 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3A17D370161EB63700566539 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		3A17D372161EB63700566539 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		3A17D373161EB63700566539 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		3A17D375161EB63700566539 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		3A17D376161EB63700566539 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		3A17D379161EB63700566539 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
-		3A17D37C161EB63700566539 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
 		3A17D383161EB63800566539 /* BrowseOverflowTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrowseOverflowTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A17D384161EB63800566539 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		3A17D38C161EB63800566539 /* BrowseOverflowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BrowseOverflowTests-Info.plist"; sourceTree = "<group>"; };
 		3A17D38E161EB63800566539 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3A313249162E75AD00DB9870 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		3A4F1E66161F067400AAFA1A /* TopicTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicTests.h; sourceTree = "<group>"; };
 		3A4F1E67161F067400AAFA1A /* TopicTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicTests.m; sourceTree = "<group>"; };
 		3A4F1E69161F06CE00AAFA1A /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
@@ -265,12 +257,7 @@
 			children = (
 				3A17D369161EB63700566539 /* BrowseOverflowAppDelegate.h */,
 				3A17D36A161EB63700566539 /* BrowseOverflowAppDelegate.m */,
-				3A17D372161EB63700566539 /* MasterViewController.h */,
-				3A17D373161EB63700566539 /* MasterViewController.m */,
-				3A17D375161EB63700566539 /* DetailViewController.h */,
-				3A17D376161EB63700566539 /* DetailViewController.m */,
-				3A17D378161EB63700566539 /* MasterViewController.xib */,
-				3A17D37B161EB63700566539 /* DetailViewController.xib */,
+				3A313249162E75AD00DB9870 /* MainWindow.xib */,
 				3A17D361161EB63700566539 /* Supporting Files */,
 				3A4F1E69161F06CE00AAFA1A /* Topic.h */,
 				3A4F1E6A161F06CE00AAFA1A /* Topic.m */,
@@ -474,10 +461,9 @@
 				3A17D36D161EB63700566539 /* Default.png in Resources */,
 				3A17D36F161EB63700566539 /* Default@2x.png in Resources */,
 				3A17D371161EB63700566539 /* Default-568h@2x.png in Resources */,
-				3A17D37A161EB63700566539 /* MasterViewController.xib in Resources */,
-				3A17D37D161EB63700566539 /* DetailViewController.xib in Resources */,
 				3AE7D1711627C60A005C23DE /* BrowseOverflowViewController.xib in Resources */,
 				3ADB905A162B2A32005EBD65 /* QuestionSummaryCell.xib in Resources */,
+				3A31324A162E75AD00DB9870 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,8 +503,6 @@
 			files = (
 				3A17D367161EB63700566539 /* main.m in Sources */,
 				3A17D36B161EB63700566539 /* BrowseOverflowAppDelegate.m in Sources */,
-				3A17D374161EB63700566539 /* MasterViewController.m in Sources */,
-				3A17D377161EB63700566539 /* DetailViewController.m in Sources */,
 				3A4F1E6B161F06CE00AAFA1A /* Topic.m in Sources */,
 				3A4F1E72162002D800AAFA1A /* Question.m in Sources */,
 				3A4F1E7D162022D200AAFA1A /* Person.m in Sources */,
@@ -601,22 +585,6 @@
 				3A17D364161EB63700566539 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		3A17D378161EB63700566539 /* MasterViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3A17D379161EB63700566539 /* en */,
-			);
-			name = MasterViewController.xib;
-			sourceTree = "<group>";
-		};
-		3A17D37B161EB63700566539 /* DetailViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3A17D37C161EB63700566539 /* en */,
-			);
-			name = DetailViewController.xib;
 			sourceTree = "<group>";
 		};
 		3A17D38D161EB63800566539 /* InfoPlist.strings */ = {

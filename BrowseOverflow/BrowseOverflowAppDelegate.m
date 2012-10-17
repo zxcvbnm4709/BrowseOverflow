@@ -34,12 +34,14 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+{    
     BrowseOverflowViewController *firstViewController = [[BrowseOverflowViewController alloc] initWithNibName:nil bundle:nil];
     TopicTableDataSource *dataSource = [[TopicTableDataSource alloc] init];
     [dataSource setTopics:[self topics]];
     firstViewController.dataSource = dataSource;
+
     self.navigationController.viewControllers = [NSArray arrayWithObject:firstViewController];
+    
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;

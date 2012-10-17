@@ -10,7 +10,7 @@
 
 @interface BrowseOverflowViewController : UIViewController
 
-@property UITableView *tableView;
+@property IBOutlet UITableView *tableView;
 @property NSObject <UITableViewDataSource, UITableViewDelegate> *dataSource;
 
 - (void)userDidSelectTopicNotification: (NSNotification *)note;
