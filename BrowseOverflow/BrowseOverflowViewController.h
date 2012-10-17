@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StackOverflowManagerDelegate.h"
 
-@interface BrowseOverflowViewController : UIViewController
+@class BrowseOverflowObjectConfiguration;
+@class StackOverflowManager;
+
+@interface BrowseOverflowViewController : UIViewController <StackOverflowManagerDelegate>
 
 @property IBOutlet UITableView *tableView;
 @property NSObject <UITableViewDataSource, UITableViewDelegate> *dataSource;
+@property BrowseOverflowObjectConfiguration *objectConfiguration;
+@property StackOverflowManager *manager;
 
 - (void)userDidSelectTopicNotification: (NSNotification *)note;
 

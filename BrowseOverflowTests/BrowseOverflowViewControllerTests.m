@@ -11,7 +11,12 @@
 #import "BrowseOverflowViewController.h"
 #import "TopicTableDataSource.h"
 #import "QuestionListTableDataSource.h"
+#import "BrowseOverflowObjectConfiguration.h"
 #import "Topic.h"
+#import "TestObjectConfiguration.h"
+#import "MockStackOverflowManager.h"
+#import "StackOverflowManager.h"
+#import "StackOverflowManagerDelegate.h"
 
 static const char *notificationKey = "BrowseOverflowViewControllerTestsAssociatedNotificationKey";
 @implementation BrowseOverflowViewController (TestNotificationDelivery)
@@ -46,6 +51,9 @@ static const char *viewWillDisappearKey = "BrowseOverflowViewControllerTestsView
     SEL realViewWillDisappear, testViewWillDisappear;
     SEL realUserDidSelectTopic, testUserDidSelectTopic;
     UINavigationController *navController;
+    BrowseOverflowObjectConfiguration *objectConfiguration;
+    TestObjectConfiguration *testConfiguration;
+    MockStackOverflowManager *manager;
 }
 
 + (void)swapInstanceMethodsForClass:(Class)cls selector:(SEL)sel1 andSelector:(SEL)sel2 {
@@ -74,6 +82,11 @@ static const char *viewWillDisappearKey = "BrowseOverflowViewControllerTestsView
     testUserDidSelectTopic = @selector(browseOverflowControllerTests_userDidSelectTopicNotification:);
     
     navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    objectConfiguration = [[BrowseOverflowObjectConfiguration alloc] init];
+    viewController.objectConfiguration = objectConfiguration;
+    testConfiguration = [[TestObjectConfiguration alloc] init];
+    manager = [[MockStackOverflowManager alloc] init];
+    testConfiguration.objectToReturn = manager;
 }
 
 - (void)tearDown {
@@ -161,6 +174,28 @@ static const char *viewWillDisappearKey = "BrowseOverflowViewControllerTestsView
     viewController.dataSource = questionDataSource;
     [viewController viewDidLoad];
     STAssertEqualObjects(questionDataSource.tableView, tableView, @"Back-link to table view should be set in data source");
+}
+
+- (void)testSelectingTopicNotificationPassesObjectConfiguration {
+    [viewController userDidSelectTopicNotification:nil];
+    BrowseOverflowViewController *newTopVC = (BrowseOverflowViewController *)navController.topViewController;
+    STAssertEqualObjects(newTopVC.objectConfiguration, objectConfiguration, @"The object configuration should be passed through to the new view controller");
+}
+
+- (void)testViewWillAppearOnQuestionListInitiatesLoadingOfQuestions {
+    viewController.objectConfiguration = testConfiguration;
+    viewController.dataSource = [[QuestionListTableDataSource alloc] init];
+    [viewController viewWillAppear:YES];
+    STAssertTrue([manager didFetchQuestions], @"View controller should have arranged for question content to be downloaded");
+}
+
+- (void)testViewControllerConformsToStackOverflowManagerDelegateProtocol {
+    STAssertTrue([viewController conformsToProtocol:@protocol(StackOverflowManagerDelegate)], @"View controllers need to be StackOverflowManagerDelegate");
+}
+
+- (void)testViewControllerConfiguredAsStackOverflowManagerDelegateOnManagerCreation {
+    [viewController viewWillAppear:YES];
+    STAssertEquals(viewController.manager.delegate, viewController, @"View controller sets itself as the manager's delegate");
 }
 
 @end

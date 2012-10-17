@@ -10,6 +10,8 @@
 #import "TopicTableDataSource.h"
 #import "QuestionListTableDataSource.h"
 #import <objc/runtime.h>
+#import "BrowseOverflowObjectConfiguration.h"
+#import "StackOverflowManager.h"
 
 @interface BrowseOverflowViewController ()
 
@@ -19,6 +21,8 @@
 
 @synthesize tableView;
 @synthesize dataSource;
+@synthesize objectConfiguration;
+@synthesize manager;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,6 +41,16 @@
     objc_property_t tableViewProperty = class_getProperty([dataSource class], "tableView");
     if (tableViewProperty) {
         [dataSource setValue:tableView forKey:@"tableView"];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.manager = [objectConfiguration stackOverflowManager];
+    self.manager.delegate = self;
+    if ([self.dataSource isKindOfClass:[QuestionListTableDataSource class]]) {
+        Topic *selectedTopic = [(QuestionListTableDataSource *)self.dataSource topic];
+        [self.manager fetchQuestionsOnTopic:selectedTopic];
     }
 }
 
@@ -62,6 +76,7 @@
     QuestionListTableDataSource *questionsDataSource = [[QuestionListTableDataSource alloc] init];
     questionsDataSource.topic = selectedTopic;
     nextViewController.dataSource = questionsDataSource;
+    nextViewController.objectConfiguration = self.objectConfiguration;
     [[self navigationController] pushViewController:nextViewController animated:YES];
 }
 

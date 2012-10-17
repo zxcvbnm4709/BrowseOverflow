@@ -21,6 +21,10 @@
 		3A17D387161EB63800566539 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A17D35C161EB63600566539 /* Foundation.framework */; };
 		3A17D38F161EB63800566539 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A17D38D161EB63800566539 /* InfoPlist.strings */; };
 		3A31324A162E75AD00DB9870 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A313249162E75AD00DB9870 /* MainWindow.xib */; };
+		3A313258162E931200DB9870 /* BrowseOverflowObjectConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A313257162E931200DB9870 /* BrowseOverflowObjectConfiguration.m */; };
+		3A313259162E931200DB9870 /* BrowseOverflowObjectConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A313257162E931200DB9870 /* BrowseOverflowObjectConfiguration.m */; };
+		3A31325C162E933400DB9870 /* BrowseOverflowObjectConfigurationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A31325B162E933400DB9870 /* BrowseOverflowObjectConfigurationTests.m */; };
+		3A31325F162EA31000DB9870 /* TestObjectConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A31325E162EA31000DB9870 /* TestObjectConfiguration.m */; };
 		3A4F1E68161F067400AAFA1A /* TopicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E67161F067400AAFA1A /* TopicTests.m */; };
 		3A4F1E6B161F06CE00AAFA1A /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E6A161F06CE00AAFA1A /* Topic.m */; };
 		3A4F1E6C161F06CE00AAFA1A /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F1E6A161F06CE00AAFA1A /* Topic.m */; };
@@ -112,6 +116,12 @@
 		3A17D38C161EB63800566539 /* BrowseOverflowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BrowseOverflowTests-Info.plist"; sourceTree = "<group>"; };
 		3A17D38E161EB63800566539 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3A313249162E75AD00DB9870 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		3A313256162E931200DB9870 /* BrowseOverflowObjectConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseOverflowObjectConfiguration.h; sourceTree = "<group>"; };
+		3A313257162E931200DB9870 /* BrowseOverflowObjectConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseOverflowObjectConfiguration.m; sourceTree = "<group>"; };
+		3A31325A162E933400DB9870 /* BrowseOverflowObjectConfigurationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseOverflowObjectConfigurationTests.h; sourceTree = "<group>"; };
+		3A31325B162E933400DB9870 /* BrowseOverflowObjectConfigurationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseOverflowObjectConfigurationTests.m; sourceTree = "<group>"; };
+		3A31325D162EA31000DB9870 /* TestObjectConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestObjectConfiguration.h; sourceTree = "<group>"; };
+		3A31325E162EA31000DB9870 /* TestObjectConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestObjectConfiguration.m; sourceTree = "<group>"; };
 		3A4F1E66161F067400AAFA1A /* TopicTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicTests.h; sourceTree = "<group>"; };
 		3A4F1E67161F067400AAFA1A /* TopicTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicTests.m; sourceTree = "<group>"; };
 		3A4F1E69161F06CE00AAFA1A /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
@@ -294,6 +304,8 @@
 				3A5E5472162B90D700EF6E0B /* GravatarCommunicator.m */,
 				3A5E5473162B90D700EF6E0B /* AvatarStore.h */,
 				3A5E5474162B90D700EF6E0B /* AvatarStore.m */,
+				3A313256162E931200DB9870 /* BrowseOverflowObjectConfiguration.h */,
+				3A313257162E931200DB9870 /* BrowseOverflowObjectConfiguration.m */,
 			);
 			path = BrowseOverflow;
 			sourceTree = "<group>";
@@ -345,6 +357,8 @@
 				3ADB9053162AE5D8005EBD65 /* QuestionListTableDataSourceTests.m */,
 				3A5E5487162D21FF00EF6E0B /* BrowseOverflowAppDelegateTests.h */,
 				3A5E5488162D21FF00EF6E0B /* BrowseOverflowAppDelegateTests.m */,
+				3A31325A162E933400DB9870 /* BrowseOverflowObjectConfigurationTests.h */,
+				3A31325B162E933400DB9870 /* BrowseOverflowObjectConfigurationTests.m */,
 			);
 			path = BrowseOverflowTests;
 			sourceTree = "<group>";
@@ -382,6 +396,8 @@
 				3A5E547A162BCA2B00EF6E0B /* FakeNotificationCenter.m */,
 				3A5E547C162C22B500EF6E0B /* ReloadDataWatcher.h */,
 				3A5E547D162C22B600EF6E0B /* ReloadDataWatcher.m */,
+				3A31325D162EA31000DB9870 /* TestObjectConfiguration.h */,
+				3A31325E162EA31000DB9870 /* TestObjectConfiguration.m */,
 			);
 			path = "Mocks, Fakes Stubs";
 			sourceTree = "<group>";
@@ -518,6 +534,7 @@
 				3ADB9057162AF6D5005EBD65 /* QuestionSummaryCell.m in Sources */,
 				3A5E5475162B90D700EF6E0B /* GravatarCommunicator.m in Sources */,
 				3A5E5477162B90D700EF6E0B /* AvatarStore.m in Sources */,
+				3A313258162E931200DB9870 /* BrowseOverflowObjectConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +582,9 @@
 				3A5E547B162BCA2B00EF6E0B /* FakeNotificationCenter.m in Sources */,
 				3A5E547E162C22B600EF6E0B /* ReloadDataWatcher.m in Sources */,
 				3A5E5489162D21FF00EF6E0B /* BrowseOverflowAppDelegateTests.m in Sources */,
+				3A313259162E931200DB9870 /* BrowseOverflowObjectConfiguration.m in Sources */,
+				3A31325C162E933400DB9870 /* BrowseOverflowObjectConfigurationTests.m in Sources */,
+				3A31325F162EA31000DB9870 /* TestObjectConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
