@@ -15,14 +15,7 @@
 #import "AvatarStore.h"
 #import "FakeNotificationCenter.h"
 #import "ReloadDataWatcher.h"
-
-@implementation AvatarStore (TestingExtensions)
-
-- (void)setData:(NSData *)data forLocation:(NSString *)location {
-    [dataCache setObject:data forKey:location];
-}
-
-@end
+#import "AvatarStore+TestingExtensions.h"
 
 @implementation QuestionListTableDataSourceTests {
     QuestionListTableDataSource *dataSource;
