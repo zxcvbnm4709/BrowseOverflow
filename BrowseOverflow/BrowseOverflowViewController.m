@@ -12,6 +12,7 @@
 #import <objc/runtime.h>
 #import "BrowseOverflowObjectConfiguration.h"
 #import "StackOverflowManager.h"
+#import "Topic.h"
 
 @interface BrowseOverflowViewController ()
 
@@ -78,6 +79,36 @@
     nextViewController.dataSource = questionsDataSource;
     nextViewController.objectConfiguration = self.objectConfiguration;
     [[self navigationController] pushViewController:nextViewController animated:YES];
+}
+
+#pragma mark - StackOverflowManagerDelegate
+
+- (void)fetchingQuestionsFailedWithError:(NSError *)error {
+    
+}
+
+- (void)didReceiveQuestions:(NSArray *)questions {
+    Topic *topic = ((QuestionListTableDataSource *)self.dataSource).topic;
+    for (Question *thisQuestion in questions) {
+        [topic addQuestion:thisQuestion];
+    }
+    [tableView reloadData];
+}
+
+- (void)fetchingQuestionBodyFailedWithError:(NSError *)error {
+    
+}
+
+- (void)retrievingAnswersFailedWithError:(NSError *)error {
+    
+}
+
+- (void)answersReceivedForQuestion:(Question *)question {
+    [tableView reloadData];
+}
+
+- (void)bodyReceivedForQuestion:(Question *)question {
+    [tableView reloadData];
 }
 
 @end
